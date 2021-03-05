@@ -13,12 +13,12 @@ public class Book {
 	private  String author;
 	private String img;
 	
-	public Book() {
+	/*public Book() {
 		this.id = null;
 		this.author = null;
 		this.title = null;
 		this.img = null;
-	}
+	}*/
 	
 	public Book(String title, String author) {
 		this.title = title;
