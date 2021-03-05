@@ -13,12 +13,12 @@ public class Book {
 	private  String author;
 	private String img;
 	
-	/*public Book() {
+	public Book() {
 		this.id = null;
 		this.author = null;
 		this.title = null;
 		this.img = null;
-	}*/
+	}
 	
 	public Book(String title, String author) {
 		this.title = title;
@@ -37,6 +37,16 @@ public class Book {
 	public String getTitle() {
 		return this.title;
 	}
+	
+	
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	
 	
 	@Override
 	public String toString() {
