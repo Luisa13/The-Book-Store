@@ -1,10 +1,10 @@
-package com.luisatrece.react;
+package com.luisasanavi.bookstore;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ReactApplicationTests {
+class BookstoreApplicationTests {
 
 	@Test
 	void contextLoads() {
