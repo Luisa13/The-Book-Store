@@ -24,7 +24,12 @@ public class BookController {
 	
 	@PostMapping
 	public void addBook(@RequestBody Book book) {
-		this.bookRepository.save(book);
+		this.bookRepository.insert(book);
+	}
+	
+	@GetMapping("/")
+	public String empty() {
+		return "There is nothing to see";
 	}
 	
 	@GetMapping("/{id}")
@@ -49,14 +54,14 @@ public class BookController {
 		this.bookRepository.delete(book);
 	}
 	
-	/*@GetMapping("{id}")
-	public Book searchByTitle() {
-		this.bookRepository.find
+	@GetMapping("/title/{title}")
+	public Book searchByTitle(@PathVariable String title) {
+		return this.bookRepository.findByTitle(title).get();
 	}
 	
-	@GetMapping("{id}")
-	public List<Book> searchByAuthor(){
-		
-	}*/
+	@GetMapping("/author/{author}")
+	public List<Book> searchByAuthor(@PathVariable String author){
+		return this.bookRepository.findByAuthor(author);
+	}
 
 }
