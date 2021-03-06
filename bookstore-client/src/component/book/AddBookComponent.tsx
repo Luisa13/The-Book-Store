@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import ApiService from '../../service/ApiService';
 
-class AddBookComponent extends Component{
-    constructor(props){
+class AddBookComponent extends Component<any, any>{
+    constructor(props: any){
         super(props);
         this.state = {
             title: '',
@@ -12,8 +12,7 @@ class AddBookComponent extends Component{
         this.saveBook = this.saveBook.bind(this);
     }
 
-    saveBook = (event) =>{
-        event.preventDefault();
+    saveBook = () =>{
         let book = this.state;
         ApiService.addBook(book);
     }
@@ -23,7 +22,8 @@ class AddBookComponent extends Component{
     }
 
     render(){
-        return();
+        return("");
     }
 
 }
+export default AddBookComponent;
