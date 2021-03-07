@@ -1,6 +1,8 @@
 # TODO
 Because there is always room for improvement...
 
+*  -[ ] Makefile tu run both, the server and the client
+
 ### Server side
 *  -[ ] Exceptions
 *  -[ ] Tests for (add new item, delete, get, get all, edit...)
