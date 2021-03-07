@@ -23,6 +23,7 @@ public class BookController {
 	@Autowired
 	private BookRepository bookRepository;
 	
+	@CrossOrigin(origins = "*")
 	@PostMapping
 	public void addBook(@RequestBody Book book) {
 		this.bookRepository.insert(book);

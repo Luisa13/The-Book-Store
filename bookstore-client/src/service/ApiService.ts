@@ -7,7 +7,9 @@ const BOOK_API_BASE_URL = "http://localhost:8080/books";
 class ApiService{
 
     addBook(book: any){
-        return axios.post(`${BOOK_API_BASE_URL}/${book}`);
+        console.log(book.json);
+        debugger;
+        return axios.post(`${BOOK_API_BASE_URL}/${book.json}`);
     }
 
     

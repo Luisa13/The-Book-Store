@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import ApiService from '../../service/ApiService';
 import axios from 'axios';
+import ReactDOM from "react-dom"
+import AddBookComponent from './AddBookComponent';
 
 
 
@@ -32,7 +34,8 @@ class ListBookComponent extends Component<any, any>{
     };
 
     addBook(){
-        console.log("ey");
+        console.log("Adding a Book");
+
     };
 
     deleteBook(book: any){};
@@ -45,37 +48,56 @@ class ListBookComponent extends Component<any, any>{
             <div>
                 <HeaderComponent/>
                 <div>
-                    <h2 className="text-center">Book Details</h2>
-                    <button className="button is-link" onClick={() => this.addBook()}> Add New Book</button>
-                    <table className="table table-striped">
-                        <thead>
-                            <tr>
-                                <th className="hidden">Id</th>
-                                <th>Title</th>
-                                <th>Author</th>
-                                <th>img</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                this.state.books.map(
-                                    (book: any) =>
-                                        <tr key={book.id}>
-                                            <td>{book.id}</td>
-                                            <td>{book.title}</td>
-                                            <td>{book.author}</td>
-                                            <td>{book.img}</td>
-                                            <td>
-                                                <button className="btn btn-success" onClick={() => this.deleteBook(book.id)}> Delete</button>
-                                                <button className="btn btn-success" onClick={() => this.editBook(book.id)}> Edit</button>
-                                            </td>
-                                        </tr>
-                                )
-                            }
-                        </tbody>
-                    </table>
 
+                    <div className="columns">
+                        <div className="column">
+                            
+
+                            <table className="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th className="hidden">Id</th>
+                                        <th>Title</th>
+                                        <th>Author</th>
+                                        <th>img</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                        this.state.books.map(
+                                            (book: any) =>
+                                                <tr key={book.id}>
+                                                    <td>{book.id}</td>
+                                                    <td>{book.title}</td>
+                                                    <td>{book.author}</td>
+                                                    <td>{book.img}</td>
+                                                    <td>
+                                                        <div className = 'columns'>
+                                                            <div className="column">
+                                                                <button className="button is-primary is-outlined" onClick={() => this.deleteBook(book.id)}> Delete</button>
+                                                            </div>
+                                                            <div className="column">
+                                                            <button className="button is-primary is-outlined" onClick={() => this.editBook(book.id)}> Edit</button>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                        )
+                                    }
+                                </tbody>
+                            </table>
+
+                            <h2 className="text-center">Book Details</h2>
+                            <button className="button is-primary" onClick={() => this.addBook()}> Add New Book</button>
+                        </div>
+                        
+                        <div className="column">
+                            <AddBookComponent/>
+                        </div>
+                     </div>
+                    
                 </div>
+
             </div>
            
         );
