@@ -11,22 +11,27 @@ const AddBookComponent: React.FC = () =>{
 
     const saveBook = (event: FormEvent) => {
         event.preventDefault();
-        console.log("Saving Book");
         const titleVal = textInputTitle.current!.value;
         const authorVal = textInputAuthor.current!.value;
+
         const book = {
             id: '',
             title: titleVal,
             author: authorVal
         }
         console.log(book)
-        axios.post(`${BOOK_API_BASE_URL}`, book);
+        axios.post(`${BOOK_API_BASE_URL}`, book)
+        .then(res => {
+            console.info("New book added");
+        })
+        .catch(error => {
+            console.error("Error attempting to add a new book to the bookstore")
+        });
     }
 
 
    
     return(
-            
                     <div className = "field">
                         <label className="label">Title</label>
                             <div className="control">
@@ -42,6 +47,7 @@ const AddBookComponent: React.FC = () =>{
 
                         <button className="button is-primary" onClick={saveBook }> Accept</button>
                     </div>
+    
        
     );
     

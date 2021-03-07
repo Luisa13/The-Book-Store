@@ -51,6 +51,7 @@ public class BookController {
 		this.bookRepository.save(book);
 	}
 	
+	@CrossOrigin(origins = "*")
 	@DeleteMapping("{id}")
 	public void delete(@PathVariable String id) {
 		Book book = this.bookRepository.findById(id).get();

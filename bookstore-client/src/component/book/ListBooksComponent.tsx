@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import ApiService from '../../service/ApiService';
 import axios from 'axios';
-import ReactDOM from "react-dom"
-import AddBookComponent from './AddBookComponent';
-
 
 
 const BOOK_API_BASE_URL = "http://localhost:8080/books";
@@ -15,15 +12,15 @@ class ListBookComponent extends Component<any, any>{
             books: []
         }
         this.reloadBookList = this.reloadBookList.bind(this);
-        this.addBook = this.addBook.bind(this);
     }
 
     componentDidMount(){
         this.reloadBookList();
     }
 
+    
     reloadBookList(){
-        axios(`${BOOK_API_BASE_URL}/all`)
+        axios.get(`${BOOK_API_BASE_URL}/all`)
        .then(res => {
             console.log("RESPONSE: ", res);
             this.setState({
@@ -33,25 +30,25 @@ class ListBookComponent extends Component<any, any>{
        .catch(error => {console.log("Error trying to fetch the data")});
     };
 
-    addBook(){
-        console.log("Adding a Book");
-
+    deleteBook(bookId: any){
+        axios.delete(`${BOOK_API_BASE_URL}/${bookId}`) 
+            .then(rep => {
+                console.info("A book was deleted");
+                this.reloadBookList();
+            })
+            .catch( error => {
+                console.error("Error trying to delete a book");
+            });
     };
-
-    deleteBook(book: any){};
     
-    editBook(book: any){};
+    editBook(bookId: any){
+        
+    };
 
     render(){
         return(
 
-            <div>
-                <HeaderComponent/>
-                <div>
-
-                    <div className="columns">
-                        <div className="column">
-                            
+                        <div>
 
                             <table className="table table-striped">
                                 <thead>
@@ -87,18 +84,8 @@ class ListBookComponent extends Component<any, any>{
                                 </tbody>
                             </table>
 
-                            <h2 className="text-center">Book Details</h2>
-                            <button className="button is-primary" onClick={() => this.addBook()}> Add New Book</button>
+                            
                         </div>
-                        
-                        <div className="column">
-                            <AddBookComponent/>
-                        </div>
-                     </div>
-                    
-                </div>
-
-            </div>
            
         );
     };
@@ -107,33 +94,5 @@ class ListBookComponent extends Component<any, any>{
     
 }
 
-function HeaderComponent() {
-    return (
-        <header className="container pt-2 pb-2">
-            <nav className="navbar" role="navigation" aria-label="main navigation">
-                <div className="navbar-brand">
-                    <p className="navbar-item">
-                        <img src="/logo.png" alt="BookStore" />
-                    </p>
-
-                    <button className="navbar-burger" aria-label="menu" aria-expanded="false">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    </button>
-                </div>
-                <div className="navbar-end is-uppercase has-text-weight-bold">
-                    <div className="navbar-item has-text-primary">Home</div>
-                    <div className="navbar-item">About Us</div>
-                    <div className="navbar-item">Contact</div>
-                    <div className="navbar-item">Shop</div>
-                    <div className="navbar-item">
-                        <img src="/icon_search.png" alt="Search"/>
-                    </div>
-                </div>
-            </nav>
-        </header>
-    )
-};
 export default ListBookComponent;
 

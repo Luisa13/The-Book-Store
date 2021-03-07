@@ -2,33 +2,16 @@ import logo from './logo.svg';
 import './App.sass';
 import './App.css';
 import 'bulma/css/bulma.css'
+import BookStoreApp from './component/templates/BookStoreApp';
 
-import ListBooksComponent from './component/book/ListBooksComponent'
 
 function App() {
   return (
     <div className="App">
-      <ListBooksComponent />
+      <div><BookStoreApp/></div>
     </div>
   );
-  /*return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );*/
+
 }
 
 export default App;
