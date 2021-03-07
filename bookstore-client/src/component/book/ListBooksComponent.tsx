@@ -48,12 +48,12 @@ class ListBookComponent extends Component<any, any>{
     render(){
         return(
 
-                        <div>
+                        <div className = "container"> 
 
-                            <table className="table table-striped">
+                            <table className="table is-hoverable is-fullwidth ">
                                 <thead>
                                     <tr>
-                                        <th className="hidden">Id</th>
+                                        <th className="is-hidden">Id</th>
                                         <th>Title</th>
                                         <th>Author</th>
                                         <th>img</th>
@@ -64,17 +64,17 @@ class ListBookComponent extends Component<any, any>{
                                         this.state.books.map(
                                             (book: any) =>
                                                 <tr key={book.id}>
-                                                    <td>{book.id}</td>
+                                                    <td className = "is-hidden">{book.id}</td>
                                                     <td>{book.title}</td>
                                                     <td>{book.author}</td>
                                                     <td>{book.img}</td>
                                                     <td>
                                                         <div className = 'columns'>
-                                                            <div className="column">
+                                                            <div className = 'column  is-narrow'>
                                                                 <button className="button is-primary is-outlined" onClick={() => this.deleteBook(book.id)}> Delete</button>
                                                             </div>
-                                                            <div className="column">
-                                                            <button className="button is-primary is-outlined" onClick={() => this.editBook(book.id)}> Edit</button>
+                                                            <div className = 'column  is-narrow'>  
+                                                                <button className="button is-primary is-outlined" onClick={() => this.editBook(book.id)}> Edit</button>
                                                             </div>
                                                         </div>
                                                     </td>
@@ -83,6 +83,7 @@ class ListBookComponent extends Component<any, any>{
                                     }
                                 </tbody>
                             </table>
+                            <section className="section"> </section>
 
                             
                         </div>

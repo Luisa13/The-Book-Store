@@ -27,26 +27,31 @@ const AddBookComponent: React.FC = () =>{
         .catch(error => {
             console.error("Error attempting to add a new book to the bookstore")
         });
+
     }
 
 
    
     return(
+                <nav className="panel">
+                    <p className="panel-heading">
+                        Add new Book
+                    </p>
                     <div className = "field">
                         <label className="label">Title</label>
                             <div className="control">
                                 <input className="input" type="text" placeholder="Text input" ref={textInputTitle} />
                             </div>
-                        <p className="help">This is a help text</p>
 
                         <label className="label">Author</label>
                             <div className="control">
                                 <input className="input" type="text" placeholder="Text input" ref={textInputAuthor} />
                             </div>
-                        <p className="help">This is a help text</p>
+                        <br></br>
 
                         <button className="button is-primary" onClick={saveBook }> Accept</button>
                     </div>
+                </nav>
     
        
     );

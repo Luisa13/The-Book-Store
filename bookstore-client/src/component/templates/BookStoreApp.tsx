@@ -25,7 +25,7 @@ const BookStoreApp: React.FC = () => {
                             <button className="button is-primary" onClick={addBook}> Add New Book</button>
                         </div>
                     </div>
-                    <div className="column">
+                    <div>
                         <div className={`modal ${isVisible ? "is-active" : ""}`}>
                             <div className="modal-background"></div>
                                 <div className="modal-content">

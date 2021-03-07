@@ -8,7 +8,9 @@ import BookStoreApp from './component/templates/BookStoreApp';
 function App() {
   return (
     <div className="App">
-      <div><BookStoreApp/></div>
+      <div>
+        <BookStoreApp/>
+      </div>
     </div>
   );
 
