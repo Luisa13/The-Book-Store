@@ -3,6 +3,7 @@ import ApiService from '../../service/ApiService';
 import axios from 'axios';
 
 
+
 const BOOK_API_BASE_URL = "http://localhost:8080/books";
 
 class ListBookComponent extends Component<any, any>{
@@ -44,8 +45,8 @@ class ListBookComponent extends Component<any, any>{
             <div>
                 <HeaderComponent/>
                 <div>
-                    <h2 className="text-center">User Details</h2>
-                    <button className="btn btn-danger" onClick={() => this.addBook()}> Add New Book</button>
+                    <h2 className="text-center">Book Details</h2>
+                    <button className="button is-link" onClick={() => this.addBook()}> Add New Book</button>
                     <table className="table table-striped">
                         <thead>
                             <tr>
@@ -60,6 +61,7 @@ class ListBookComponent extends Component<any, any>{
                                 this.state.books.map(
                                     (book: any) =>
                                         <tr key={book.id}>
+                                            <td>{book.id}</td>
                                             <td>{book.title}</td>
                                             <td>{book.author}</td>
                                             <td>{book.img}</td>

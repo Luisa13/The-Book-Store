@@ -1,6 +1,7 @@
 import logo from './logo.svg';
-import './App.css';
 import './App.sass';
+import './App.css';
+import 'bulma/css/bulma.css'
 
 import ListBooksComponent from './component/book/ListBooksComponent'
 
