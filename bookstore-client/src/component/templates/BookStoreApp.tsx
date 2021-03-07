@@ -8,8 +8,11 @@ const BookStoreApp: React.FC = () => {
 
     const addBook = () =>{
         setVisibility(!isVisible);
-        console.log(isVisible);
     };
+
+    const closeModal =() =>{
+        setVisibility(false);
+    }
 
     return(
         <div>
@@ -24,13 +27,13 @@ const BookStoreApp: React.FC = () => {
                     </div>
                     <div className="column">
                         <div className={`modal ${isVisible ? "is-active" : ""}`}>
-                        <div className="modal-background"></div>
-                        <div className="modal-content">
-                        <div className="box">
-                            <AddBookComponent/>
-                        </div>
-                        </div>
-                        <button className="modal-close is-large" aria-label="close"></button>
+                            <div className="modal-background"></div>
+                                <div className="modal-content">
+                                    <div className="box">
+                                        <AddBookComponent/>
+                                    </div>
+                                </div>
+                            <button className="modal-close is-large" aria-label="close" onClick={closeModal}></button>
                         </div>
                     </div>
                 </div>
