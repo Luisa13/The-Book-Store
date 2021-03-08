@@ -8,6 +8,7 @@ Because there is always room for improvement...
 *  -[ ] Tests for (add new item, delete, get, get all, edit...)
 *  -[ ] Comparator for books
 *  -[ ] Redirect error of bad request "/error"
+*  -[ ] Document code
 #### future
 *  -[ ] Add reviews for every book
 
