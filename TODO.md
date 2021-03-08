@@ -1,5 +1,5 @@
 # TODO
-Because there is always room for improvement...
+_Because there is always room for improvement..._
 
 *  -[ ] Makefile tu run both, the server and the client
 
