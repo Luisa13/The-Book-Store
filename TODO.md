@@ -1,7 +1,7 @@
 # TODO
 _Because there is always room for improvement..._
 
-*  -[ ] Makefile tu run both, the server and the client
+*  -[ ] Makefile to run both, the server and the client
 
 ### Server side
 *  -[ ] Exceptions
